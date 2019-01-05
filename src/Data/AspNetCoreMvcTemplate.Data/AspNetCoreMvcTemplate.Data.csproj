@@ -13,4 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetCoreMvcTemplate.Data.Models\AspNetCoreMvcTemplate.Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>
