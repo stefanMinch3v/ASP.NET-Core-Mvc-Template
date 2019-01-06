@@ -4,6 +4,7 @@
     using Data.Common;
     using Data.Models;
     using Data.Repositories;
+    using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -58,6 +59,9 @@
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // add admin and update db
+            app.UseDatabaseMigration();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
