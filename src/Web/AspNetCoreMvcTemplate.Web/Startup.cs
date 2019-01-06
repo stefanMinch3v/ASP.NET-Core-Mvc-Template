@@ -1,6 +1,5 @@
 ﻿namespace AspNetCoreMvcTemplate.Web
 {
-    using AutoMapper;
     using Common.Mapping;
     using Data;
     using Data.Common;
@@ -21,7 +20,7 @@
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -36,7 +35,7 @@
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    this.Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(options =>
             {
@@ -56,6 +55,9 @@
 
             // repositories
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+
+            // services
+            services.AddDomainServices();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

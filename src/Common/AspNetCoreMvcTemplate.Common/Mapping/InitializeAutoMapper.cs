@@ -1,10 +1,7 @@
-﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AspNetCoreMvcTemplate.Common.Mapping
+﻿namespace AspNetCoreMvcTemplate.Common.Mapping
 {
+    using AutoMapper;
+
     public class InitializeAutoMapper
     {
         public static void AddCurrentProfile()

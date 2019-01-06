@@ -14,26 +14,26 @@
 
     public class DownloadPersonalDataModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly ILogger<DownloadPersonalDataModel> _logger;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly ILogger<DownloadPersonalDataModel> logger;
 
         public DownloadPersonalDataModel(
             UserManager<ApplicationUser> userManager,
             ILogger<DownloadPersonalDataModel> logger)
         {
-            _userManager = userManager;
-            _logger = logger;
+            this.userManager = userManager;
+            this.logger = logger;
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await this.userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return this.NotFound($"Unable to load user with ID '{this.userManager.GetUserId(User)}'.");
             }
 
-            _logger.LogInformation("User with ID '{UserId}' asked for their personal data.", _userManager.GetUserId(User));
+            this.logger.LogInformation("User with ID '{UserId}' asked for their personal data.", this.userManager.GetUserId(this.User));
 
             // Only include personal data for download
             var personalData = new Dictionary<string, string>();
@@ -44,7 +44,7 @@
                 personalData.Add(p.Name, p.GetValue(user)?.ToString() ?? "null");
             }
 
-            Response.Headers.Add("Content-Disposition", "attachment; filename=PersonalData.json");
+            this.Response.Headers.Add("Content-Disposition", "attachment; filename=PersonalData.json");
             return new FileContentResult(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(personalData)), "text/json");
         }
     }

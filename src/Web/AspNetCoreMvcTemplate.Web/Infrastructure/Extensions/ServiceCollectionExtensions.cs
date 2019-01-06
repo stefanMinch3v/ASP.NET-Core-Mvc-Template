@@ -10,6 +10,8 @@
         /// <summary>
         /// auto mapping all services (IExampleService to ExampleService) using Transient extension
         /// </summary>
+        /// <param name="services">interface IServiceCollection</param>
+        /// <returns>returns IServiceCollection</returns>
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
             Assembly
