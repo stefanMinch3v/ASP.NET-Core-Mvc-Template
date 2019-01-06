@@ -57,17 +57,14 @@
             // repositories
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
-            // auto adds all services
-            services.AddDomainServices();
-
-            // automapper
-            services.AddAutoMapper(typeof(AutoMapperProfile));
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // automapper
+            InitializeAutoMapper.AddCurrentProfile();
+
             // adds admin and updates db
             app.UseDatabaseMigration();
 
