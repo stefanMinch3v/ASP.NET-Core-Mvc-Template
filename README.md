@@ -26,6 +26,6 @@
 * warning disabled SA1118 // Parameter must not span multiple lines
 * warning disabled SA1305 // Field names must not use hungarian notation
 
-### Only for data layer because the migrations are auto-generated
+### Only for data layer (due to migrations which are auto-generated)
 * warning disabled SA1400 // The class must have an access modifier
 * warning disabled SA1115 // Parameter must follow comma.The parameter must begin on the line after the previous parameter
