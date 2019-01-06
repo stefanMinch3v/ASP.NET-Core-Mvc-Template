@@ -1,6 +1,4 @@
-using System;
-
-namespace AspNetCoreMvcTemplate.Web.Models
+namespace AspNetCoreMvcTemplate.Web.ViewModels
 {
     public class ErrorViewModel
     {

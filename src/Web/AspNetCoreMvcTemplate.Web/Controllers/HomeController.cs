@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using AspNetCoreMvcTemplate.Web.Models;
-
-namespace AspNetCoreMvcTemplate.Web.Controllers
+﻿namespace AspNetCoreMvcTemplate.Web.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
+    using ViewModels;
+
     public class HomeController : Controller
     {
         public IActionResult Index()
