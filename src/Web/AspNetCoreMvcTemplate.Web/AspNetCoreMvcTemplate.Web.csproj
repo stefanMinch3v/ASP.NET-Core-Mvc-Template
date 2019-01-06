@@ -8,6 +8,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -16,6 +17,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\AspNetCoreMvcTemplate.Common\AspNetCoreMvcTemplate.Common.csproj" />
     <ProjectReference Include="..\..\Data\AspNetCoreMvcTemplate.Data.Models\AspNetCoreMvcTemplate.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\AspNetCoreMvcTemplate.Data\AspNetCoreMvcTemplate.Data.csproj" />
     <ProjectReference Include="..\..\Services\AspNetCoreMvcTemplate.Services\AspNetCoreMvcTemplate.Services.csproj" />

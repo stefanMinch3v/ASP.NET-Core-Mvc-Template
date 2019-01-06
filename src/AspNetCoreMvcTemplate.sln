@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{12
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreMvcTemplate.Services", "Services\AspNetCoreMvcTemplate.Services\AspNetCoreMvcTemplate.Services.csproj", "{8A975943-C3B4-4546-9E78-FCC7EA70EB20}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{B84427FC-A153-4611-AFAE-456A9F1050FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreMvcTemplate.Common", "Common\AspNetCoreMvcTemplate.Common\AspNetCoreMvcTemplate.Common.csproj", "{484B4D00-5C27-4F85-8E27-CB2B3814D1F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{8A975943-C3B4-4546-9E78-FCC7EA70EB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A975943-C3B4-4546-9E78-FCC7EA70EB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A975943-C3B4-4546-9E78-FCC7EA70EB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484B4D00-5C27-4F85-8E27-CB2B3814D1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484B4D00-5C27-4F85-8E27-CB2B3814D1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484B4D00-5C27-4F85-8E27-CB2B3814D1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484B4D00-5C27-4F85-8E27-CB2B3814D1F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{6DFC20F7-4AC3-4CBF-A0DA-253DC713B244} = {CC30B329-F10E-4E3C-AE63-A18558838706}
 		{59643A64-D377-40C8-82E1-5CD77E21CCC8} = {CC30B329-F10E-4E3C-AE63-A18558838706}
 		{8A975943-C3B4-4546-9E78-FCC7EA70EB20} = {12A60135-B434-4BF4-A944-E18D9647612C}
+		{484B4D00-5C27-4F85-8E27-CB2B3814D1F6} = {B84427FC-A153-4611-AFAE-456A9F1050FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90C35971-5F4D-4614-80BD-67AF12E38F18}

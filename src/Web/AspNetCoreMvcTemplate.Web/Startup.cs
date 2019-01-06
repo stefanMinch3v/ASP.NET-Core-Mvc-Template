@@ -1,5 +1,7 @@
 ﻿namespace AspNetCoreMvcTemplate.Web
 {
+    using AutoMapper;
+    using Common.Mapping;
     using Data;
     using Data.Common;
     using Data.Models;
@@ -57,6 +59,9 @@
 
             // auto adds all services
             services.AddDomainServices();
+
+            // automapper
+            services.AddAutoMapper(typeof(AutoMapperProfile));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
