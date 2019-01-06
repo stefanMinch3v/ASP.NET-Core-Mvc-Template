@@ -36,7 +36,7 @@
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            services.AddDefaultIdentity<ApplicationUser>(options =>
             {
                 options.Password.RequiredLength = 6;
                 options.Password.RequireLowercase = false;
@@ -44,6 +44,7 @@
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireDigit = false;
             })
+            .AddRoles<IdentityRole>()
             .AddDefaultUI(UIFramework.Bootstrap4)
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
