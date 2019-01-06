@@ -1,7 +1,9 @@
 ﻿namespace AspNetCoreMvcTemplate.Web
 {
     using Data;
+    using Data.Common;
     using Data.Models;
+    using Data.Repositories;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -45,7 +47,11 @@
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
+            // lower case urls - user friendly
             services.AddRouting(options => options.LowercaseUrls = true);
+
+            // repositories
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -19,20 +19,20 @@
 
         public DbSet<TEntity> DbSet { get; }
 
-        public async Task AddAsync(TEntity entity) 
-            => await this.Context.AddAsync(entity);
-
         public IQueryable<TEntity> All()
             => this.DbSet;
+
+        public Task AddAsync(TEntity entity)
+            => this.Context.AddAsync(entity);
 
         public void Delete(TEntity entity)
             => this.DbSet.Remove(entity);
 
-        public void Dispose()
-            => this.Context.Dispose();
-
         public Task<int> SaveChangesAsync()
             => this.Context.SaveChangesAsync();
+
+        public void Dispose()
+            => this.Context.Dispose();
 
         public void Update(TEntity entity)
         {
