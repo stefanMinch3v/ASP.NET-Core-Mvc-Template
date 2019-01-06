@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\AspNetCoreMvcTemplate.Data.Models\AspNetCoreMvcTemplate.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\AspNetCoreMvcTemplate.Data\AspNetCoreMvcTemplate.Data.csproj" />
+    <ProjectReference Include="..\..\Services\AspNetCoreMvcTemplate.Services\AspNetCoreMvcTemplate.Services.csproj" />
   </ItemGroup>
 
 </Project>

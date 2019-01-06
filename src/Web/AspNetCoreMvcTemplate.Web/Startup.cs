@@ -54,12 +54,15 @@
             // repositories
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
+            // auto adds all services
+            services.AddDomainServices();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            // add admin and update db
+            // adds admin and updates db
             app.UseDatabaseMigration();
 
             if (env.IsDevelopment())
