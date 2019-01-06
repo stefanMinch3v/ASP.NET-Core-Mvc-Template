@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
-namespace AspNetCoreMvcTemplate.Web.Areas.Identity.Pages.Account.Manage
+﻿namespace AspNetCoreMvcTemplate.Web.Areas.Identity.Pages.Account.Manage
 {
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using System;
+
     public static class ManageNavPages
     {
         public static string Index => "Index";
