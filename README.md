@@ -5,7 +5,6 @@
 * Auto-database migrations
 * AutoMapper
 * Auto-mapping for services
-* Repository pattern
 
 ## Seeded user
 > * **Default administrator**

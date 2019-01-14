@@ -2,9 +2,7 @@
 {
     using Common.Mapping;
     using Data;
-    using Data.Common;
     using Data.Models;
-    using Data.Repositories;
     using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -52,9 +50,6 @@
 
             // lower case urls - user friendly
             services.AddRouting(options => options.LowercaseUrls = true);
-
-            // repositories
-            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             // services
             services.AddDomainServices();

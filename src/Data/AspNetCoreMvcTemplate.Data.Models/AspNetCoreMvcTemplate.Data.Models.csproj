@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetCoreMvcTemplate.Data.Common\AspNetCoreMvcTemplate.Data.Common.csproj" />
+  </ItemGroup>
+
 </Project>
