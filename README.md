@@ -4,7 +4,7 @@
 ## Features
 * Auto-database migrations
 * AutoMapper
-* Auto-mapping for services
+* Auto-injecting services
 
 ## Seeded user
 > * **Default administrator**
