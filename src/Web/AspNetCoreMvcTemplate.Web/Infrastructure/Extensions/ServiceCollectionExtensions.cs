@@ -8,7 +8,7 @@
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// auto mapping all services (IExampleService to ExampleService) using Transient extension
+        /// auto mapping all services (IExampleService to ExampleService) using Scoped extension
         /// </summary>
         /// <param name="services">interface IServiceCollection</param>
         /// <returns>returns IServiceCollection</returns>
@@ -24,7 +24,7 @@
                     Implementation = t
                 })
                 .ToList()
-                .ForEach(s => services.AddTransient(s.Interface, s.Implementation));
+                .ForEach(s => services.AddScoped(s.Interface, s.Implementation));
 
             return services;
         }
