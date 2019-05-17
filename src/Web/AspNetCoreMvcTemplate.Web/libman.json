@@ -10,7 +10,9 @@
         "dist/css/bootstrap.css",
         "dist/css/bootstrap.min.css",
         "dist/js/bootstrap.js",
-        "dist/js/bootstrap.min.js"
+        "dist/js/bootstrap.min.js",
+        "dist/js/bootstrap.bundle.js",
+        "dist/js/bootstrap.bundle.min.js"
       ]
     },
     {
