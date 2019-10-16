@@ -2,6 +2,7 @@
 {
     using Microsoft.Extensions.DependencyInjection;
     using Services;
+    using Services.Infrastructure.Filters;
     using System.Linq;
     using System.Reflection;
 
@@ -14,7 +15,7 @@
         /// <returns>returns IServiceCollection</returns>
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
-            Assembly
+            var types = Assembly
                 .GetAssembly(typeof(IService))
                 .GetTypes()
                 .Where(t => t.IsClass && t.GetInterfaces().Any(i => i.Name == $"I{t.Name}"))
@@ -22,9 +23,29 @@
                 {
                     Interface = t.GetInterface($"I{t.Name}"),
                     Implementation = t
-                })
-                .ToList()
-                .ForEach(s => services.AddScoped(s.Interface, s.Implementation));
+                });
+
+            foreach (var type in types)
+            {
+                var attributes = type.Interface.CustomAttributes;
+
+                var isScoped = attributes.Any(attr => attr.AttributeType == typeof(ScopedServiceAttribute));
+                var isSingleton = attributes.Any(attr => attr.AttributeType == typeof(SingletonServiceAttribute));
+                var isTransient = attributes.Any(attr => attr.AttributeType == typeof(TransientServiceAttribute));
+
+                if (isScoped)
+                {
+                    services.AddScoped(type.Interface, type.Implementation);
+                }
+                else if (isSingleton)
+                {
+                    services.AddSingleton(type.Interface, type.Implementation);
+                }
+                else if (isTransient)
+                {
+                    services.AddTransient(type.Interface, type.Implementation);
+                }
+            }
 
             return services;
         }
